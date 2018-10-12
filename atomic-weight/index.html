@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Atomic Weight Lookup</title>
+  <link rel="stylesheet" href="https://smith2021.github.io/hermes/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed">
+</head>
+<body>
+  <div class="w3-padding roboto">
+    <h2>Atomic Weight Calculator</h2>
+    <div class="w3-row">
+      <div class="w3-col m12 l6 w3-padding">
+        <div class="w3-blue w3-padding">
+          <h2>By Element</h2>
+          <input type="text" class="w3-input" placeholder="Hydrogen" id="elementInput">
+          <br>
+          <div class="w3-padding element-list w3-white">
+            <ul class="basic" id="elementList"></ul>
+          </div>
+        </div>
+      </div>
+      <div class="w3-col m12 l6 w3-padding">
+        <div class="w3-blue w3-padding">
+          <h2>By Compound</h2>
+          <input type="text" class="w3-input" placeholder="C6H12O6" id="compoundInput">
+          <p class="w3-large">Note: Chemical Compounds are case-sensitive. (ie. only Fe will work for iron, fe and fE will fail)</p>
+          <button class="raised w3-white" id="calculateCompound">Calculate</button>
+          &nbsp;&nbsp;
+          <button class="raised w3-white" id="resetCompound">Reset</button>
+          <br><br>
+          <div class="w3-white w3-padding-small">
+            Atomic Weight: <span id="compoundDisplay">null</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="weight.min.js"></script>
+</body>
+</html>
