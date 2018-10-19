@@ -5,7 +5,7 @@ const data = (function () {
       return JSON.parse(this.responseText);
     }
   };
-  xhttp.open('POST', '../PeriodicTableJSON.json', true);
+  xhttp.open('POST', '../data/PeriodicTableJSON.json', true);
   xhttp.send();
 })();
 
