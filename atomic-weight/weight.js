@@ -76,6 +76,7 @@ function initApp () {
   xhttp.onreadystatechange = function () {
     if (this.readyState === 4 && this.status === 200) {
       data = JSON.parse(this.responseText);
+      initApp();
     }
   };
   xhttp.open('GET', '../data/PeriodicTableJSON.json', true);
