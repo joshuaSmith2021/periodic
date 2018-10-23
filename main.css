@@ -154,3 +154,17 @@
 .question-btn > i {
   font-size: 30px;
 }
+
+/* Ripple effect */
+.ripple {
+  background-position: center;
+  transition: background 0.8s;
+}
+.ripple:hover {
+  background: #6d1e02 radial-gradient(circle, transparent 1%, #6d1e02 1%) center/15000%;
+}
+.ripple:active {
+  background-color: #842c0d;
+  background-size: 100%;
+  transition: background 0s;
+}
