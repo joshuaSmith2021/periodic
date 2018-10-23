@@ -1,5 +1,8 @@
 (function () {
   document.getElementById('tab-display').style.height = (window.innerHeight - document.getElementById('topbar').offsetHeight - document.getElementById('bottombar').offsetHeight) + 'px';
+  for (let i = 0; i < document.getElementsByClassName('vertical-spacer').length; i++) {
+    document.getElementsByClassName('vertical-spacer')[i].style.height = document.getElementsByClassName('vertical-spacer')[i].getAttribute('data-spacer-height');
+  }
   
   for (let i = 0; i < document.getElementsByClassName('tabbutton').length; i++) {
     document.getElementsByClassName('tabbutton')[i].addEventListener('click', function (element) {
