@@ -11,9 +11,9 @@
     <div class="navbutton special">Lynx Assistant</div>
   </div>
   <div class="tabbar roboto main w3-large" id="bottombar">
-    <div class="tabbutton selected">App</div>
-    <div class="tabbutton">About</div>
-    <div class="tabbutton">Contribute</div>
+    <div class="tabbutton ripple selected">App</div>
+    <div class="tabbutton ripple">About</div>
+    <div class="tabbutton ripple">Contribute</div>
   </div>
   <div class="w3-row" id="tab-display">
     <div class="w3-col l8 m12 big-section">
@@ -33,8 +33,8 @@
     </div>
     <div class="w3-col l4 m12 big-section w3-light-gray side-padding" style="height:100%">
       <div class="question-box">
-        <input type="text" class="question-input roboto" placeholder="What is the atomic mass of hydrogen?">
-        <div class="main question-btn">
+        <input type="text" class="question-input roboto" placeholder="What is the atomic mass of hydrogen?" data-current-phrase="0" id="askBox">
+        <div class="main question-btn" id="sendQuestion">
           <i class="material-icons">question_answer</i>
         </div>
       </div>
