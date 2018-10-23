@@ -17,21 +17,27 @@
   </div>
   <div class="w3-row" id="tab-display">
     <div class="w3-col l8 m12 big-section">
-      <div class="tab w3-padding" id="appSection" hidden>
+      <div class="tab w3-padding" id="appSection">
         <h2 class="roboto">Main</h2>
+        
       </div>
       <div class="tab w3-padding" id="aboutSection" hidden>
         <h2 class="roboto">About</h2>
       </div>
-      <div class="tab w3-padding" id="contributeSection">
+      <div class="tab w3-padding" id="contributeSection" hidden>
         <h2 class="roboto">Contribute</h2>
         <p class="roboto w3-large">
           The Lynx Assistant is built by the community on <a href="https://github.com/joshuaSmith2021/periodic">GitHub</a>. It is built in JavaScript for the web and licensed under the <a href="https://github.com/joshuaSmith2021/periodic/blob/master/LICENSE">GPL-3.0</a>.
         </p>
       </div>
     </div>
-    <div class="w3-col l4 m12 big-section w3-light-gray w3-padding" style="height:100%">
-      
+    <div class="w3-col l4 m12 big-section w3-light-gray side-padding" style="height:100%">
+      <div class="question-box">
+        <input type="text" class="question-input roboto" placeholder="What is the atomic mass of hydrogen?">
+        <div class="main question-btn">
+          <i class="material-icons">question_answer</i>
+        </div>
+      </div>
     </div>
   </div>
   <script src="page-setup.min.js"></script>
