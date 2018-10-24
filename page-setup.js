@@ -25,6 +25,24 @@
 
 // AI question management
 (function () {
+  new Typed('#placeholderText', {
+    loop: true,
+	  startDelay: 1000,
+	
+	  strings: [
+		  'What is the atomic mass of hydrogen?',
+      'Which period is gold in?',
+      'Is the symbol for antimony Sb?'
+	  ],
+	
+    backSpeed: 50,
+    typeSpeed: 75,
+  });
+  
+  const placeholderCycle = setInterval(function () {
+    document.getElementById('askBox').placeholder = document.getElementById('placeholderText').innerText;
+  }, 10);
+  
   document.getElementById('sendQuestion').addEventListener('click', function () {
     // This is where an apiai request is handled
   })
