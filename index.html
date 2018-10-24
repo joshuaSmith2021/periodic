@@ -31,7 +31,7 @@
           <ul class="roboto w3-large">
             <li>Have any issues or bugs to bring up</li>
             <li>Are experienced with web design</li>
-            <li>Are experienced with JavaScript and chemistry</li>
+            <li>Are experienced with JavaScript</li>
             <li>Are experienced with iOS or Android development</li>
             <li>Have any suggestions for the assistant</li>
         </ul>
@@ -40,13 +40,15 @@
     </div>
     <div class="w3-col l4 m12 big-section w3-light-gray side-padding" style="height:100%">
       <div class="question-box">
-        <input type="text" class="question-input roboto" placeholder="What is the atomic mass of hydrogen?" data-current-phrase="0" id="askBox">
+        <input type="text" class="question-input roboto" data-current-phrase="0" id="askBox">
         <div class="main question-btn" id="sendQuestion">
           <i class="material-icons">question_answer</i>
         </div>
       </div>
     </div>
   </div>
+  <p id="placeholderText" hidden></p>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
   <script src="page-setup.min.js"></script>
 </body>
 </html>
