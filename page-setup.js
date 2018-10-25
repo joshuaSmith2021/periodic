@@ -47,6 +47,32 @@
   }, 10);
   
   document.getElementById('sendQuestion').addEventListener('click', function () {
-    // This is where an apiai request is handled
+    const client = new ApiAi.ApiAiClient({
+      accessToken: '7d60f0ee98594d4fbe55f595a9645a5d'
+    });
+    
+    client.textRequest(document.getElementById('askBox').value).then((response) => {
+      const intent = response.result.metadata.intentName;
+      switch (intent) {
+        case 'atomic_weight.get':
+          break;
+        case 'group.check':
+          break;
+        case 'group.get':
+          break;
+        case 'information':
+          break;
+        case 'ionic_compund_weight.get':
+          break;
+        case 'period.check':
+          break;
+        case 'period.get':
+          break;
+        case 'symbol.get':
+          break;
+      }
+    }).catch((error) => {
+      alert(error);
+    });
   })
 })();
