@@ -23,6 +23,10 @@
   }
 })();
 
+function displayResponse (text) {
+  document.getElementById('aiResponse').innerHTML += '<div class="from-bot roboto w3-padding">' + text + '</div>';
+}
+
 // AI question management
 (function () {
   new Typed('#placeholderText', {
@@ -55,6 +59,7 @@
       const intent = response.result.metadata.intentName;
       switch (intent) {
         case 'atomic_weight.get':
+          displayResponse(response.result.parameters.elements);
           break;
         case 'group.check':
           break;
