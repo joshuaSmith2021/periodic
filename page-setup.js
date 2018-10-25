@@ -28,11 +28,14 @@
   new Typed('#placeholderText', {
     loop: true,
 	  startDelay: 1000,
+    smartBackspace: false,
 	
 	  strings: [
 		  'What is the atomic mass of hydrogen?',
       'Which period is gold in?',
-      'Is the symbol for antimony Sb?'
+      'Is the symbol for antimony Sb?',
+      'How many valence electrons does silver have?',
+      'Is carbon a halogen?'
 	  ],
 	
     backSpeed: 50,
