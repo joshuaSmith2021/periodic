@@ -1389,7 +1389,18 @@ function displayRequest (text) {
           break;
         case 'group.check':
           if (response.result.parameters.groups !== '') {
-            
+            const groupName = response.result.parameters.groups;
+            if (groupName === (function () {
+              for (let i = 0; i < appData.length; i++) {
+                if (appData[i].name.toUpperCase() === response.result.parameters.elements.toUpperCase()) {
+                  return appData[i].category;
+                }
+              }
+            })()) {
+              displayResponse('Yes, ' + response.result.parameters.elements + ' is a ' + groupName + '.');
+            } else {
+              displayResponse('No, ' + response.result.parameters.elements + ' is a ' + groupName + '.');
+            }
           } else if (response.result.parameters.number !== '') {
             const groupNumber = parseInt(response.result.parameters.number, 10);
             if (groupNumber === (function () {
@@ -1412,6 +1423,13 @@ function displayRequest (text) {
           }
           break;
         case 'group.get':
+          displayResponse(response.result.parameters.elements.charAt(0).toUpperCase() + response.result.parameters.elements.substr(1, response.result.parameters.elements.length - 1) + ' is a ' + (function () {
+            for (let i = 0; i < appData.length; i++) {
+              if (appData[i].name.toUpperCase() === response.result.parameters.elements.toUpperCase()) {
+                return appData[i].category + ' in group ' + appData[i].group;
+              }
+            }
+          })() + '.');
           break;
         case 'information':
           break;
