@@ -9,6 +9,7 @@
 <body>
   <div class="w3-bar roboto" id="topbar">
     <div class="navbutton special">Lynx Assistant</div>
+    <div class="navbutton" id="gSignIn">Sign Up</div>
   </div>
   <div class="tabbar roboto main w3-large" id="bottombar">
     <div class="tabbutton ripple selected">App</div>
@@ -48,8 +49,20 @@
     </div>
   </div>
   <p id="placeholderText" hidden></p>
+  <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase-auth.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
-  <script src="https://joshuasmith2021.github.io/periodic/apiai.js"></script>
   <script src="page-setup.min.js"></script>
+  <script>
+const config = {
+  apiKey: "AIzaSyDpiLDBM16wWQB4VVF1o-eLtQ74M50usWk",
+  authDomain: "chemistry-f43da.firebaseapp.com",
+  databaseURL: "https://chemistry-f43da.firebaseio.com",
+  projectId: "chemistry-f43da",
+  storageBucket: "chemistry-f43da.appspot.com",
+  messagingSenderId: "452081063996"
+};
+firebase.initializeApp(config);  
+  </script>
 </body>
 </html>
