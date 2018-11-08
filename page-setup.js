@@ -24,21 +24,6 @@
   }
 })();
 
-// Google authentication
-document.getElementById('gSignIn').addEventListener('click', function () {
-  if (firebase.auth().currentUser) {
-    //user is signed in
-  } else {
-    //user is not signed in
-    const provider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithPopup(provider).then((result) => {
-      alert(result.user.email + '\n' + result.user.uid);
-    }).catch((e) => {
-      console.log(e);
-    });
-  }
-});
-
 function displayResponse (text) {
   document.getElementById('aiResponse').innerHTML += '<br><div class="from-bot roboto w3-padding">' + text + '</div>';
 }
@@ -69,4 +54,19 @@ function displayRequest (text) {
   const placeholderCycle = setInterval(function () {
     document.getElementById('askBox').placeholder = document.getElementById('placeholderText').innerText;
   }, 10);
+  
+  document.getElementById('sendQuestion').addEventListener('click', function () {
+    const request = new XMLHttpRequest();
+    const requestText = document.getElementById('askBox').value;
+    displayRequest(requestText);
+    request.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        const dialogflowResponse = JSON.parse(this.responseText);
+        displayResponse(dialogflowResponse.responseText);
+      }
+    };
+    request.open('POST', 'https://lynx-chemistry.herokuapp.com/?q=' + encodeURI(requestText) + '&key=b6051dc7-42c3-4a87-a8f2-a70da3839bc4', true);
+    request.send();
+    document.getElementById('askBox').value = '';
+  });
 })();
