@@ -28,6 +28,14 @@ function displayResponse (text) {
   document.getElementById('aiResponse').innerHTML += '<br><div class="from-bot roboto w3-padding">' + text + '</div>';
 }
 
+// Get session ID
+function uuidv4() {
+  return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+    (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+  )
+}
+const sessionId = uuidv4();
+
 function displayRequest (text) {
   document.getElementById('aiResponse').innerHTML += '<br><div class="from-user roboto w3-padding">' + text + '</div>';
 }
@@ -65,7 +73,7 @@ function displayRequest (text) {
         displayResponse(dialogflowResponse.responseText);
       }
     };
-    request.open('POST', 'https://lynx-chemistry.herokuapp.com/?q=' + encodeURI(requestText) + '&key=b6051dc7-42c3-4a87-a8f2-a70da3839bc4', true);
+    request.open('POST', 'https://lynx-chemistry.herokuapp.com/?q=' + encodeURI(requestText) + '&key=b6051dc7-42c3-4a87-a8f2-a70da3839bc4&session=' + sessionId, true);
     request.send();
     document.getElementById('askBox').value = '';
   });
