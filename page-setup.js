@@ -1,7 +1,7 @@
 // Page setup
 (function () {
   document.getElementById('tab-display').style.height = (window.innerHeight - document.getElementById('topbar').offsetHeight - document.getElementById('bottombar').offsetHeight) + 'px';
-  document.getElementById('aiResponse').style.height = document.getElementById('sideBox').offsetHeight - document.getElementById('aiBox').offsetHeight - document.getElementById('bottombar').offsetHeight + 'px';
+  document.getElementById('aiResponse').style.height = document.getElementById('sideBox').offsetHeight - document.getElementById('aiBox').offsetHeight - document.getElementById('aiCreds').offsetHeight -document.getElementById('bottombar').offsetHeight + 'px';
   for (let i = 0; i < document.getElementsByClassName('vertical-spacer').length; i++) {
     document.getElementsByClassName('vertical-spacer')[i].style.height = document.getElementsByClassName('vertical-spacer')[i].getAttribute('data-spacer-height');
   }
@@ -51,8 +51,8 @@ function displayRequest (text) {
 		  'What is the atomic mass of hydrogen?',
       'Which period is gold in?',
       'Is the symbol for antimony Sb?',
-      'How many valence electrons does silver have?',
-      'Is carbon a halogen?'
+      'Is carbon a halogen?',
+      'What is the atomic weight of NaCl?'
 	  ],
 	
     backSpeed: 50,
@@ -73,7 +73,7 @@ function displayRequest (text) {
         displayResponse(dialogflowResponse.responseText);
       }
     };
-    request.open('POST', 'https://lynx-chemistry.herokuapp.com/?q=' + encodeURI(requestText) + '&key=b6051dc7-42c3-4a87-a8f2-a70da3839bc4&session=' + sessionId, true);
+    request.open('POST', 'https://lynx-chemistry.herokuapp.com/?q=' + encodeURI(requestText) + '&key=' + document.getElementById('accessToken').value + '&session=' + sessionId, true);
     request.send();
     document.getElementById('askBox').value = '';
   });
