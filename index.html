@@ -9,7 +9,7 @@
 <body>
   <div class="w3-bar roboto" id="topbar">
     <div class="navbutton special">Lynx Assistant</div>
-    <div class="navbutton" id="gSignIn">Sign Up</div>
+    <div class="navbutton" id="getKey">Get Access to Assistant</div>
   </div>
   <div class="tabbar roboto main w3-large" id="bottombar">
     <div class="tabbutton ripple selected">App</div>
@@ -39,6 +39,11 @@
       </div>
     </div>
     <div class="w3-col l4 m12 side-section w3-light-gray side-padding" style="height:100%" id="sideBox">
+      <div class="roboto" id="aiCreds">
+        <h2>Lynx Assistant</h2>
+        <input type="text" class="w3-input" placeholder="Assistant Access Token" id="accessToken" value="b6051dc7-42c3-4a87-a8f2-a70da3839bc4">
+        <br>
+      </div>
       <div class="question-box" id="aiBox">
         <input type="text" class="question-input roboto" data-current-phrase="0" id="askBox">
         <div class="main question-btn" id="sendQuestion">
