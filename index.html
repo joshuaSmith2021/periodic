@@ -9,7 +9,7 @@
 <body>
   <div class="w3-bar roboto" id="topbar">
     <div class="navbutton special">Lynx Assistant</div>
-    <div class="navbutton" id="getKey">Get Access to Assistant</div>
+    <div class="navbutton" id="getKey">Get Access</div>
   </div>
   <div class="tabbar roboto main w3-large" id="bottombar">
     <div class="tabbutton ripple selected">App</div>
@@ -23,6 +23,20 @@
       </div>
       <div class="tab w3-padding" id="aboutSection" hidden>
         <h2 class="roboto">About</h2>
+        <div class="roboto">
+          <p class="w3-large">
+            The Lynx assistant is currently able to support seven different requests.
+          </p>
+          <ul>
+            <li>atomic_weight.get: Given an element or symbol, the assistant responds with the average atomic mass of the specific element.</li>
+            <li>element.get: Given a symbol, the assistant responds with the name of the element tht the symbol represents.</li>
+            <li>group.check: Given an element or symbol and a group number or group name (ie noble gases), the assistant responds with whether or not the given element is found in the given group. If the element does not appear in the given group, it will also tell users which group it is found in.</li>
+            <li>group.get: Given an element, the assistant responds with which group the element is found in, as well as the name of the group (ie noble gases).</li>
+            <li>period.check: This request is similar to the group.check request, but this request checks for periods rather than groups.</li>
+            <li>period.get: Given an element, the assistant responds with which period the element is found in.</li>
+            <li>symbol.get: Given an element, the assistant responds with which symbol represents the element.</li>
+          </ul>
+        </div>
       </div>
       <div class="tab w3-padding" id="contributeSection" hidden>
         <h2 class="roboto">Contribute</h2>
@@ -54,19 +68,6 @@
     </div>
   </div>
   <p id="placeholderText" hidden></p>
-  <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase-auth.js"></script>
-  <script>
-const config = {
-  apiKey: "AIzaSyDpiLDBM16wWQB4VVF1o-eLtQ74M50usWk",
-  authDomain: "chemistry-f43da.firebaseapp.com",
-  databaseURL: "https://chemistry-f43da.firebaseio.com",
-  projectId: "chemistry-f43da",
-  storageBucket: "chemistry-f43da.appspot.com",
-  messagingSenderId: "452081063996"
-};
-firebase.initializeApp(config);  
-  </script>
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
   <script src="page-setup.min.js"></script>
 </body>
